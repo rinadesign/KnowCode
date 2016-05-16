@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" name="viewport" content="initial-scale=1">
+	<title>KnowCode</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- Bottstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- JQUERY must be first -->
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"> </script>
+
+	<!-- firebase -->
+	<script src="js/firebase.js"></script>
+
+	<!-- firebase auth client -->
+	<script src="js/firebase-auth-client.js"></script>
+
+	<!-- firebase simple login -->
+	<script src="js/firebase-simple-login.js"></script>
+
+	<!-- Jquery UI -->
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+		<!-- analytics -->
+	<script src="js/analytics.js"></script>
+
+	<!-- personal js -->
+	<script src="js/login.js"></script>
+	<script src="js/js.js"></script>
+	<script src="js/autoComplete.js"></script>
+
+
+</head>
+
+
+<nav class="navbar ">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/knowCodeLogo.png" alt=""></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="active"><a href="#">Home</a></li>
+        <li>
+          <a href="#">Blog</a>
+        </li>
+      </ul>
+
+      <!-- <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      </form> -->
+
+      	<form class="navbar-form navbar-right" role="search">
+    		<div class="form-group">
+     	 		<input type="text" class="form-control" placeholder="Search" id="autocomplete-1">
+   				<button type="submit" class="btn btn-default">
+   		 			<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+   				</button>
+   			</div>
+  		</form>
+
+      <ul class="nav navbar-nav navbar-right">
+            <button class="btn btn-sm btn-default " id="showSign">Sign Up</button>
+            <button class="btn btn-sm btn-default " id="showLog">Log in</button>
+          </ul>
+    </div>
+    <div id="signUpCollapse">
+        	<div class="input-group pull-right">
+        		<input type="text" class="form-control " id="usernameSign" placeholder="username" aria-describedby="basic-addon1">
+        		<input type="text" class="form-control" id=
+        		"passwordSign" placeholder="password" aria-describedby="basic-addon2">
+        		<button class="btn btn-default pull-right" id="signUp">Sign Up</button>
+        	</div>
+        </div>
+        <div id="logInCollapse">
+        	<div class="input-group pull-right">
+        		<input type="text" class="form-control " id="username" placeholder="username" aria-describedby="basic-addon1">
+        		<input type="text" class="form-control" id=
+        		"password" placeholder="password" aria-describedby="basic-addon2">
+        		<!-- <button class="btn btn-default pull-right" id="signOut">Log Out</button> -->
+        		<button class="btn btn-default pull-right" id="signIn">Log In</button>
+        		
+        	</div>
+        </div>
+  </div>
+</nav>
+
+
+<body>
+<header>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="head">
+					<h1>Learn...</h1>
+				</div>
+			</div>
+			<div class="col-lg-12 col-xs-12">
+				<div class="icons">
+					<div class="col-lg-4 col-xs-4">
+						<div class="circle">
+							<img class="iconImg" src="img/android.png" alt="">
+						</div>
+						<h2>Android</h2>
+					</div>
+					<div class="col-lg-4 col-xs-4">
+						<div class="circle">
+							<img class="iconImg" src="img/ios.png" alt="">
+						</div>
+						<h2>ios</h2>
+					</div>
+					<div class="col-lg-4 col-xs-4">
+						<div class="circle">
+							<img class="iconImg" src="img/c.png" alt="">
+						</div>
+						<h2>C</h2>
+					</div>
+				</div>
+			
+			</div>
+			<div class="col-lg-12">
+				<div class="join">
+					<button type="button" class="btn btn-info btn-lg center-block">Join Free</button>
+					<h3>& code.build.share</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="courses">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="container">
+					<ul class="nav nav-pills" role="tablist">
+						<!-- nav-pills also works -->
+						<li class="active"><a href="#android" data-toggle="pill"><img class="tabIcon" src="img/androidIcon.png" alt=""></a></li>
+						<li><a href="#ios" data-toggle="pill"><img class="tabIcon" src="img/iosIcon.png" alt=""></a></li>
+						<li><a href="#C" data-toggle="pill"><img class="tabIcon" src="img/cIcon.png" alt=""></a></li>
+					</ul>
+
+					<div class="tab-content">
+						<div id="android" class="tab-pane active">
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-4 col-sm-4 col-m-4 col-xs-12">
+										<div class="card">
+											<h5>
+												Android Widgets:Buttons 1
+											</h5>
+											<img src="img/Android1.png" alt="">
+											<p>
+												In this episode we will learn how to use Android buttons.
+											</p>
+											<div class="links">
+												<div class="row">
+													<div class="col-lg-6 col-xs-5">
+														<div class="quiz">
+															<span class="glyphicon glyphicon-file"></span>	
+															<a href="#">Quiz</a>
+														</div>
+													</div>
+													<div class="col-lg-6 col-xs-7">
+														<div class="pull-right">
+															<span class="glyphicon glyphicon-user"></span><a href="#">Comments</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-sm-4 col-m-4 col-xs-12">
+										<div class="card">
+											<h5>
+												Implicit Intents
+											</h5>
+											<img src="img/Android2.png" alt="">
+											<p>
+												Implicit intents helps your app launch other relevant apps. In this episode...
+											</p>
+											<div class="links">
+												<div class="row">
+													<div class="col-lg-6 col-xs-5">
+														<div class="quiz">
+															<span class="glyphicon glyphicon-file"></span>	
+															<a href="#">Quiz</a>
+														</div>
+													</div>
+													<div class="col-lg-6 col-xs-7">
+														<div class="pull-right">
+															<span class="glyphicon glyphicon-user"></span><a href="#">Comments</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-sm-4 col-m-4 col-xs-12">
+										<div class="card">
+											<h5>
+												Android Widgets:Buttons 2
+											</h5>
+											<img src="img/Android1.png" alt="">
+											<p>
+												Learn how to use buttons to manipulate TextViews.
+											</p>
+											<div class="links">
+												<div class="row">
+													<div class="col-lg-6 col-xs-5">
+														<div class="quiz">
+															<span class="glyphicon glyphicon-file"></span>	
+															<a href="#">Quiz</a>
+														</div>
+													</div>
+													<div class="col-lg-6 col-xs-7">
+														<div class="pull-right">
+															<span class="glyphicon glyphicon-user"></span><a href="#">Comments</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div id="ios" class="tab-pane">
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-4 col-sm-4 col-m-4 col-xs-12">
+										<div class="card">
+											<h5>
+												Android Widgets:Buttons 1
+											</h5>
+											<img src="img/Android1.png" alt="">
+											<p>
+												In this episode we will learn how to use Android buttons.
+											</p>
+											<div class="links">
+												<div class="row">
+													<div class="col-lg-6 col-xs-5">
+														<div class="quiz">
+															<span class="glyphicon glyphicon-file"></span>	
+															<a href="#">Quiz</a>
+														</div>
+													</div>
+													<div class="col-lg-6 col-xs-7">
+														<div class="pull-right">
+															<span class="glyphicon glyphicon-user"></span><a href="#">Comments</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-sm-4 col-m-4 col-xs-12">
+										<div class="card">
+											<h5>
+												Implicit Intents
+											</h5>
+											<img src="img/Android2.png" alt="">
+											<p>
+												Implicit intents helps your app launch other relevant apps. In this episode...
+											</p>
+											<div class="links">
+												<div class="row">
+													<div class="col-lg-6 col-xs-5">
+														<div class="quiz">
+															<span class="glyphicon glyphicon-file"></span>	
+															<a href="#">Quiz</a>
+														</div>
+													</div>
+													<div class="col-lg-6 col-xs-7">
+														<div class="pull-right">
+															<span class="glyphicon glyphicon-user"></span><a href="#">Comments</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-sm-4 col-m-4 col-xs-12">
+										<div class="card">
+											<h5>
+												Android Widgets:Buttons 2
+											</h5>
+											<img src="img/Android1.png" alt="">
+											<p>
+												Learn how to use buttons to manipulate TextViews.
+											</p>
+											<div class="links">
+												<div class="row">
+													<div class="col-lg-6 col-xs-5">
+														<div class="quiz">
+															<span class="glyphicon glyphicon-file"></span>	
+															<a href="#">Quiz</a>
+														</div>
+													</div>
+													<div class="col-lg-6 col-xs-7">
+														<div class="pull-right">
+															<span class="glyphicon glyphicon-user"></span><a href="#">Comments</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>	
+							</div>
+						</div>
+						<div id="C" class="tab-pane">
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-4 col-sm-4 col-m-4 col-xs-12">
+										<div class="card">
+											<h5>
+												Android Widgets:Buttons 1
+											</h5>
+											<img src="img/Android1.png" alt="">
+											<p>
+												In this episode we will learn how to use Android buttons.
+											</p>
+											<div class="links">
+												<div class="row">
+													<div class="col-lg-6 col-xs-5">
+														<div class="quiz">
+															<span class="glyphicon glyphicon-file"></span>	
+															<a href="#">Quiz</a>
+														</div>
+													</div>
+													<div class="col-lg-6 col-xs-7">
+														<div class="pull-right">
+															<span class="glyphicon glyphicon-user"></span><a href="#">Comments</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-sm-4 col-m-4 col-xs-12">
+										<div class="card">
+											<h5>
+												Android Widgets:Buttons 1
+											</h5>
+											<img src="img/Android1.png" alt="">
+											<p>
+												In this episode we will learn how to use Android buttons.
+											</p>
+											<div class="links">
+												<div class="row">
+													<div class="col-lg-6 col-xs-5">
+														<div class="quiz">
+															<span class="glyphicon glyphicon-file"></span>	
+															<a href="#">Quiz</a>
+														</div>
+													</div>
+													<div class="col-lg-6 col-xs-7">
+														<div class="pull-right">
+															<span class="glyphicon glyphicon-user"></span><a href="#">Comments</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-sm-4 col-m-4 col-xs-12">
+										<div class="card">
+											<h5>
+												Android Widgets:Buttons 1
+											</h5>
+											<img src="img/Android1.png" alt="">
+											<p>
+												In this episode we will learn how to use Android buttons.
+											</p>
+											<div class="links">
+												<div class="row">
+													<div class="col-lg-6 col-xs-5">
+														<div class="quiz">
+															<span class="glyphicon glyphicon-file"></span>	
+															<a href="#">Quiz</a>
+														</div>
+													</div>
+													<div class="col-lg-6 col-xs-7">
+														<div class="pull-right">
+															<span class="glyphicon glyphicon-user"></span><a href="#">Comments</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="more">
+				<span class="glyphicon glyphicon-menu-down"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3 col-xs-6">
+				<img src="img/knowCodeLogo.png" alt="">
+			</div>
+			<div class="col-sm-3 col-xs-6">
+				<ul class="grey nav nav-stacked">Explore
+					<li>Home</li>
+					<li>Blog</li>
+					<li>About Us</li>
+					<li>Jobs</li>
+				</ul>
+			</div>
+			<div class="col-sm-3 col-xs-6">
+				<ul class="grey nav nav-stacked">Download
+					<li>For iOS</li>
+					<li>For Android</li>
+				</ul>
+			</div>
+			<div class="col-sm-3 col-xs-6">
+				<ul class="grey nav nav-stacked">Contact
+					<li>Email/Chat</li>
+					<li>Facebook</li>
+					<li>Twitter</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+</footer>	
+
+</body>
+
+
+</html>
